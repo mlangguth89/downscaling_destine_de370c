@@ -1,0 +1,10 @@
+This directory contains the trained ML downscaling models that are publsihed at the end of the DestinE use case phase I.
+In particular, these comprise a downscaling model for NOx and ozone data.
+
+- sha_wgan_nox: trained on archived 5 km-EURAD-IM simulations between 2012 and 2017,
+                original experiment-directory: sha_wgan_log_nox_res_pretrain/sha_wgan_log_nox_res_pretrain_last/
+                -> optimized on log-transformed NOx-data with residual approach and pretraining over 50 epochs
+- sha_wgan_o3: trained on archived 5 km-EURAD-IM simulations between 2012 and 2017,
+                original experiment-directory: sha_wgan_o3_res/sha_wgan_o3_res_last
+                -> optimized on O3-data with residual approach and pretraining over 10 epochs
+ 

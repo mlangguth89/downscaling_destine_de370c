@@ -1,0 +1,20 @@
+########################################
+# EURAD-IM Nest 2 -> 3                 #
+# anchor 5 km-grid                     #
+# Valid from 2016/11/16 - 2018/12/31   #
+########################################
+
+  gridtype  = projection
+  xsize     = 29
+  ysize     = 29
+  xname     = x
+  xunits    = "meters" 
+  yname     = y
+  yunits    = "meters" 
+  xfirst    = 1000
+  xinc      = 5000
+  yfirst    = 4000
+  yinc      = 5000
+  grid_mapping = Lambert_Conformal
+  grid_mapping_name = lambert_conformal_conic
+  proj_params = "+proj=lcc +lat_0=54.0 +lon_0=12.5 +lat_1=30.0 +lat_2=60.0 +x_0=450499.7817318188 +y_0=357999.42235067615 +R=6370000.0 +units=m +no_defs"

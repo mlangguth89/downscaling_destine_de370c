@@ -1,0 +1,6 @@
+{
+  "norm_dims": ["time", "y", "x"],
+  "batch_size": 32,
+  "predictors": ["lnO3_in", "lnNOx_in", "PRS_in", "TEM_in", "RH_in", "U_in", "V_in", "PBLHGT_in", "CLDFR_in"],
+  "predictands": ["lnO3_tar_res"]
+}

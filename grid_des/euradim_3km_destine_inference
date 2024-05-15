@@ -1,0 +1,20 @@
+########################################
+# EURAD-IM Nest 2                      #
+# 3 km-grid                            #
+# Used for EURAD-IM in DestinE use case#
+########################################
+
+gridtype  = projection
+xsize     = 221
+ysize     = 272
+xname     = x
+xunits    = "meters"
+yname     = y
+yunits    = "meters"
+xfirst    = 1500
+xinc      = 3000
+yfirst    = 1500
+yinc      = 3000
+grid_mapping = Lambert_Conformal
+grid_mapping_name = lambert_conformal_conic
+proj_params = "+proj=lcc +lat_0=51.2 +lon_0=10.5 +lat_1=30.0 +lat_2=60.0 +x_0=331499.9729666978 +y_0=407999.4148654376 +R=6370000.0 +units=m +no_defs"
