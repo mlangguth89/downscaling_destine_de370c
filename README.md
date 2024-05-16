@@ -1,9 +1,20 @@
 # ML downscaling of EURAD-IM forecasts in Destine DE370c
 
 ## Background
-In scope of the Destination Earth air quality use case (DE_370c), two Wasserstein Generative Networks (WGANs) have been trained to downscale nitrogen oxide (NOx) and ozone (O3) EURAD-IM forecasts to kilometre-scale. Training of these models have been done with archived EURAD-IM forecasts that are produced operationally at [IEK-8](https://www.fz-juelich.de/de/iek/iek-8/forschung/modellierung/modelle/eurad-im) since 2012. <br>
-Although the accuracy of the attained models is not satisfactory due to a lack of informative predictors from the EURAD-IM forecast data, both models are publsihed as part of this reporsitory. Furthermore, the code to preprocess the EURAD-IM data as well as to train the WGAN models is provided here. A script to run inference on the trained WGANs is also available, ready for operational deployment.<br> 
+In scope of the [Destination Earth air quality use case (DE_370c)](https://www.fz-juelich.de/en/iek/iek-8/projects/destination-earth-use-case-for-air-quality-de370c), two Wasserstein Generative Networks (WGANs) have been trained to downscale nitrogen oxide (NOx) and ozone (O3) EURAD-IM forecasts to kilometre-scale. Training of these models have been done with archived EURAD-IM forecasts that are produced operationally at [IEK-8](https://www.fz-juelich.de/de/iek/iek-8/forschung/modellierung/modelle/eurad-im) since 2012. <br>
+Although the accuracy of the attained models is not satisfactory due to a lack of informative predictors from the EURAD-IM forecast data, both models are published as part of this reporsitory. Furthermore, the code to preprocess the EURAD-IM data as well as to train the WGAN models is provided here. A script to run inference on the trained WGANs is also available, ready for operational deployment.<br> 
 Large parts of the code base have been forked from Application 5 of the [MAELSTROM project](https://www.maelstrom-eurohpc.eu/) avaialable at: [https://gitlab.jsc.fz-juelich.de/esde/machine-learning/downscaling_maelstrom](https://gitlab.jsc.fz-juelich.de/esde/machine-learning/downscaling_maelstrom).
+
+## Author and acknowledgment
+
+**Author**: Michael Langguth (m.langguth_at_fz-juelich.de, JSC) <br>
+**Contributors**: In scope of the MAELSTROM project, [Bing Gong](https://github.com/masak1112) and [Yan Ji](https://github.com/YanJi0907) contributed to the code base.
+
+Jülich Supercomputing Centre (JSC) <br>
+Forschungszentrum Jülich <br>
+Wilhelm-Johnen-Str. <br>
+52425 Jülich <br>
+Germany <br>
 
 ## Software requirements
 
@@ -42,7 +53,7 @@ This script will load all modules listed in `env_setup/modules_jsc.sh`, minimizi
 ## Run (operational) inference on trained models 
 
 Two trained WGANs for downscaling NOx and ozone are provided in this reporsitory. The models are saved in the `trained_models/destine_final`. Albeit the accuracy of these downscaling models has not reached a satisfactory level, a script for operational deployment for demonstration purposes is made available. <br>
-Inference on the trained models can be run by  teh script `main_scripts/main_inference.py`. This is called by:
+Inference on the trained models can be run by the script `main_scripts/main_inference.py`. This is called by:
 ```
 > cd main_scripts
 > python main_inference.py [-h] [--data_base_directory/-data_base_dir PATH_TO_DATA] [--output_base_directory/-output_base_dir PATH_TO_OUTPUT] [--model_base_directory/-model_base_dir MODEL_DIR] [--initialization_time/-init_time INIT_TIME] [--target_variable/-target_var TARGET_VAR] [--grid_resoultion/-grid_res GRID_RES] [--time_steps/-time_steps TIME_STEPS] [--with_gu/-gpu] 
