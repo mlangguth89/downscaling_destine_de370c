@@ -6,8 +6,8 @@
 ########################################
 
 gridtype  = projection
-xsize     = 49
-ysize     = 49
+xsize     = 50
+ysize     = 50
 xname     = x
 xunits    = "meters" 
 yname     = y
