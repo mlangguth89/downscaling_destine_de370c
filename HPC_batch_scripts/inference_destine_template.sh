@@ -21,6 +21,9 @@ echo "Do not run the template scripts"
 exit 99
 ######### Template identifier (remove after customizing placeholders <...>) #########
 
+# allow CDO to extraploate data (to avoid NaNs in the output with bilinear interpolation)
+export REMAP_EXTRAPOLATE=on
+
 # basic directories
 WORK_DIR=$(pwd)
 BASE_DIR=$(dirname "${WORK_DIR}")

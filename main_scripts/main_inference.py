@@ -133,11 +133,10 @@ def main(parser_args):
     ofile = cdo.remap(f"{gdes_inter},{wgt_remapcon_file}", input=f"{cdo_args}", options="-L")
 
     # remap to target grid 
-    # Note: Don't use weighting files since this results into some missing values in the output (CDO-bug?)
-    #wgt_remapbil_file = check_weight_file("remapbil", ofile, gdes_inter, gdes_tar)
+    wgt_remapbil_file = check_weight_file("remapbil", ofile, gdes_inter, gdes_tar)
     logger.info(f"Bi-linearly interpolate intermediate data (file: '{gdes_inter}') to target grid (file: '{gdes_tar}').")
-    #ds = cdo.remap(f"{gdes_tar},{wgt_remapbil_file}", input=f"-setgrid,{gdes_inter} {ofile}", returnXDataset = True, options="-L")
-    ds = cdo.remapbil(f"{gdes_tar}", input=f"-setgrid,{gdes_inter} {ofile}", returnXDataset = True, options="-L")
+    ds = cdo.remap(f"{gdes_tar},{wgt_remapbil_file}", input=f"-setgrid,{gdes_inter} {ofile}", returnXDataset = True, options="-L")
+    #ds = cdo.remapbil(f"{gdes_tar}", input=f"-setgrid,{gdes_inter} {ofile}", returnXDataset = True, options="-L")
 
     logger.info(f"Preprocessing completed in {timer() - t0_remap:.2f} seconds.")
 
