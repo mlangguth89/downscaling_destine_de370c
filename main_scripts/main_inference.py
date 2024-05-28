@@ -66,7 +66,7 @@ def main(parser_args):
 
     # Check availability of EURAD-IM data
     if parser_args.grid_res == 3:
-        pattern = "ctmout_digitwin_*de3.nc"
+        pattern = "ctmout_digitwin*_*de3.nc"
     else:
         pattern = "ctmout_fc05c_*_j05.nc"
         
